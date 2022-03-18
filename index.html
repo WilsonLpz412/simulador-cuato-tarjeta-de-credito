@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Simulador Cuota Tarjeta de Crédito</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="./tecnologia-israel.png"
+        width="150"
+        height="100"
+        alt="Tecnología Israel"
+      />
+      <h1 class="simulador-title">Simulador Cuota Tarjeta de Crédito</h1>
+    </header>
+    <nav>
+      <h3>Menú</h3>
+      <ul>
+        <li><a href="#">Simulador</a></li>
+      </ul>
+    </nav>
+    <main>
+      <form class="simulador-form">
+        <label for="compra">Valor compra:</label>
+        <input
+          type="number"
+          id="compra"
+          name="compra"
+          placeholder="ingrese el valor de la compra"
+          required
+        />
+        <br />
+        <label for="cuotas">Numero de cuotas</label>
+        <input
+          type="number"
+          id="cuotas"
+          name="cuotas"
+          min="1"
+          max="24"
+          placeholder="ingrese el número de cuotas"
+          required
+        />
+        <br />
+        <label for="tasaMensualNominal">Tasa de Interés Mensual Nominal</label>
+        <input
+          type="number"
+          id="tasaMensualNominal"
+          name="tasaMensualNominal"
+          step="0.01"
+          placeholder="ingrese la tasa mensual nominal"
+          required
+        />
+        <br />
+        <input type="submit" value="Calcular" />
+        <input type="hidden" name="id" />
+      </form>
+
+      <article>
+        <h2 class="similador">Detalle de Cuotas</h2>
+        <table class="simulador-table">
+          <thead>
+            <tr>
+              <th>Mes</th>
+              <th>Deuda</th>
+              <th>Intereses</th>
+              <th>Capital</th>
+              <th>Pago Total</th>
+            </tr>
+          </thead>
+          <tbody class="simulador-detalle"></tbody>
+        </table>
+      </article>
+      <template id="simulador-template">
+        <tr>
+          <td class="mes"></td>
+          <td class="deuda"></td>
+          <td class="intereses"></td>
+          <td class="cuota"></td>
+          <td class="pagoTotal"></td>
+        </tr>
+      </template>
+    </main>
+    <footer>
+      <p>
+        Hecho por Wilson López Copyright 2022 - Todos los derechos reservados.
+      </p>
+    </footer>
+    <script src="./simulador.js"></script>
+  </body>
+</html>
